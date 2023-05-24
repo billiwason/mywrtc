@@ -21,8 +21,6 @@ let startTime;
 const localVideo = document.getElementById('localVideo');
 const remoteVideo = document.getElementById('remoteVideo');
 
-start()
-
 localVideo.addEventListener('loadedmetadata', function() {
   console.log(`Local video videoWidth: ${this.videoWidth}px,  videoHeight: ${this.videoHeight}px`);
 });
