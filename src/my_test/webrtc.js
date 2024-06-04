@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebRTC 720x1280 Resolution Test</title>
-</head>
-<body>
-    <video id="localVideo" autoplay playsinline></video>
-    <script src="webrtc.js"></script>
-</body>
-</html>
+async function startWebRTC() {
+    // 사용자 정의 해상도 설정 (720x1280)
+    const constraints = {
+        video: {
+            width: { ideal: 720 },
+            height: { ideal: 1280 }
+        }
+    };
+
+    try {
+        // 미디어 스트림 가져오기
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+        // 비디오 요소에 스트림 설정
+        const videoElement = document.getElementById('localVideo');
+        videoElement.srcObject = stream;
+    } catch (error) {
+        console.error('Error accessing media devices.', error);
+    }
+}
+
+// WebRTC 시작
+startWebRTC();
 
