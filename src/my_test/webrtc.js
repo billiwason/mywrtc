@@ -2,8 +2,8 @@ async function startWebRTC() {
     // 사용자 정의 해상도 설정 (720x1280)
     const constraints = {
         video: {
-            width: { ideal: 720 },
-            height: { ideal: 1280 }
+            width: { ideal: 540 },
+            height: { ideal: 960 }
         }
     };
 
